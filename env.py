@@ -1,0 +1,9 @@
+SECRET_KEY=your-secret-key-here
+DEBUG=True
+DB_NAME=fitfilter_db
+DB_USER=postgres
+DB_PASSWORD=your-password
+DB_HOST=localhost
+DB_PORT=5432
+EMAIL_HOST_USER=your-email@gmail.com
+EMAIL_HOST_PASSWORD=your-app-password
