@@ -1,24 +1,33 @@
+from pathlib import Path
 import os
 from decouple import config
 
+# -------------------------
+# BASE SETTINGS
+# -------------------------
 BASE_DIR = Path(__file__).resolve().parent.parent
+
 SECRET_KEY = config('SECRET_KEY', default='your-secret-key-here')
 DEBUG = config('DEBUG', default=True, cast=bool)
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
+# -------------------------
+# INSTALLED APPS
+# -------------------------
 INSTALLED_APPS = [
+    # Django default apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
-    # Third party
+
+    # Third party apps
     'rest_framework',
     'corsheaders',
-    
+
     # Local apps
     'accounts',
     'products',
@@ -27,6 +36,9 @@ INSTALLED_APPS = [
     'recommendations',
 ]
 
+# -------------------------
+# MIDDLEWARE
+# -------------------------
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
@@ -40,6 +52,9 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'fitfilter_project.urls'
 
+# -------------------------
+# TEMPLATES
+# -------------------------
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -56,6 +71,11 @@ TEMPLATES = [
     },
 ]
 
+WSGI_APPLICATION = 'fitfilter_project.wsgi.application'
+
+# -------------------------
+# DATABASE
+# -------------------------
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -67,7 +87,7 @@ DATABASES = {
     }
 }
 
-# For development, you can use SQLite:
+# Uncomment below if you want to use SQLite for quick testing
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
@@ -75,8 +95,14 @@ DATABASES = {
 #     }
 # }
 
+# -------------------------
+# AUTH & USER MODEL
+# -------------------------
 AUTH_USER_MODEL = 'accounts.User'
 
+# -------------------------
+# STATIC & MEDIA FILES
+# -------------------------
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
 STATIC_ROOT = BASE_DIR / 'staticfiles'
@@ -84,6 +110,9 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
+# -------------------------
+# REST FRAMEWORK
+# -------------------------
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.SessionAuthentication',
@@ -93,15 +122,20 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticated',
     ],
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 20
+    'PAGE_SIZE': 20,
 }
 
+# -------------------------
+# CORS
+# -------------------------
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
 ]
 
-# Email configuration
+# -------------------------
+# EMAIL CONFIGURATION
+# -------------------------
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = config('EMAIL_HOST', default='smtp.gmail.com')
 EMAIL_PORT = config('EMAIL_PORT', default=587, cast=int)
@@ -109,6 +143,8 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = config('EMAIL_HOST_USER', default='')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', default='')
 
-# Affiliate tracking
+# -------------------------
+# CUSTOM PROJECT SETTINGS
+# -------------------------
 AFFILIATE_COOKIE_DURATION = 30  # days
 COMMISSION_RATE = 0.05  # 5% default commission

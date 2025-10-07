@@ -22,6 +22,7 @@ class AffiliatePartner(models.Model):
     def __str__(self):
         return self.name
 
+
 class AffiliateLink(models.Model):
     product = models.ForeignKey('products.Product', on_delete=models.CASCADE)
     partner = models.ForeignKey(AffiliatePartner, on_delete=models.CASCADE)
@@ -47,6 +48,7 @@ class AffiliateLink(models.Model):
     class Meta:
         unique_together = ['product', 'partner']
 
+
 class ClickTracking(models.Model):
     affiliate_link = models.ForeignKey(AffiliateLink, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
@@ -65,3 +67,27 @@ class ClickTracking(models.Model):
     
     clicked_at = models.DateTimeField(auto_now_add=True)
     converted_at = models.DateTimeField(null=True, blank=True)
+
+
+# 🔥 Added models to fix ImportError
+class Review(models.Model):
+    product = models.ForeignKey('products.Product', on_delete=models.CASCADE, related_name="reviews")
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
+    rating = models.IntegerField()  # 1–5 stars
+    title = models.CharField(max_length=255)
+    body = models.TextField()
+    is_verified = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f"{self.product.name} - {self.rating}★"
+
+
+class ReviewImage(models.Model):
+    review = models.ForeignKey(Review, on_delete=models.CASCADE, related_name="images")
+    image = models.ImageField(upload_to="review_images/")
+    uploaded_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Image for {self.review}"
