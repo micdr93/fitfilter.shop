@@ -1,8 +1,8 @@
 from django.urls import path
 from . import views
 
+app_name = 'affiliates'
+
 urlpatterns = [
-    path("activities/", views.user_activity_list, name="user_activity_list"),
-    path("wishlist/", views.wishlist_view, name="wishlist_view"),
-    path("preferences/", views.user_preferences_view, name="user_preferences"),
+    path('redirect/<int:link_id>/', views.affiliate_redirect, name='affiliate_redirect'),
 ]
