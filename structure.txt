@@ -1,0 +1,190 @@
+.
+├── Procfile
+├── README.md
+├── accounts
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-313.pyc
+│   │   ├── admin.cpython-313.pyc
+│   │   ├── apps.cpython-313.pyc
+│   │   ├── forms.cpython-313.pyc
+│   │   ├── models.cpython-313.pyc
+│   │   ├── urls.cpython-313.pyc
+│   │   └── views.cpython-313.pyc
+│   ├── admin.py
+│   ├── apps.py
+│   ├── forms.py
+│   ├── migrations
+│   │   └── __init__.py
+│   ├── models.py
+│   ├── static
+│   │   └── accounts
+│   ├── templates
+│   │   └── accounts
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+├── affiliates
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-313.pyc
+│   │   ├── admin.cpython-313.pyc
+│   │   ├── apps.cpython-313.pyc
+│   │   ├── forms.cpython-313.pyc
+│   │   ├── models.cpython-313.pyc
+│   │   ├── urls.cpython-313.pyc
+│   │   └── views.cpython-313.pyc
+│   ├── admin.py
+│   ├── apps.py
+│   ├── forms.py
+│   ├── migrations
+│   │   └── __init__.py
+│   ├── models.py
+│   ├── static
+│   │   └── affiliates
+│   ├── templates
+│   │   └── affiliates
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+├── api
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-313.pyc
+│   │   ├── urls.cpython-313.pyc
+│   │   └── views.cpython-313.pyc
+│   ├── admin.py
+│   ├── apps.py
+│   ├── migrations
+│   │   └── __init__.py
+│   ├── models.py
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+├── apps
+├── core
+├── docs
+│   └── README.md
+├── env.py
+├── fitfilter_project
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-313.pyc
+│   │   ├── settings.cpython-313.pyc
+│   │   └── urls.cpython-313.pyc
+│   ├── asgi.py
+│   ├── settings.py
+│   ├── urls.py
+│   ├── utils.py
+│   └── wsgi.py
+├── includes
+├── logs
+├── manage.py
+├── media
+├── products
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-313.pyc
+│   │   ├── admin.cpython-313.pyc
+│   │   ├── apps.cpython-313.pyc
+│   │   ├── models.cpython-313.pyc
+│   │   ├── urls.cpython-313.pyc
+│   │   └── views.cpython-313.pyc
+│   ├── admin.py
+│   ├── apps.py
+│   ├── migrations
+│   │   └── __init__.py
+│   ├── models.py
+│   ├── static
+│   │   └── products
+│   ├── templates
+│   │   └── products
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+├── recommendations
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-313.pyc
+│   │   ├── admin.cpython-313.pyc
+│   │   ├── apps.cpython-313.pyc
+│   │   ├── models.cpython-313.pyc
+│   │   ├── urls.cpython-313.pyc
+│   │   └── views.cpython-313.pyc
+│   ├── admin.py
+│   ├── apps.py
+│   ├── migrations
+│   │   └── __init__.py
+│   ├── models.py
+│   ├── static
+│   │   └── recommendations
+│   ├── templates
+│   │   └── recommendations
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+├── requirements
+│   ├── base.txt
+│   ├── dev.txt
+│   └── prod.txt
+├── requirements.txt
+├── reviews
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-313.pyc
+│   │   ├── admin.cpython-313.pyc
+│   │   ├── apps.cpython-313.pyc
+│   │   ├── models.cpython-313.pyc
+│   │   ├── urls.cpython-313.pyc
+│   │   └── views.cpython-313.pyc
+│   ├── admin.py
+│   ├── apps.py
+│   ├── forms.py
+│   ├── migrations
+│   │   └── __init__.py
+│   ├── models.py
+│   ├── static
+│   │   └── reviews
+│   ├── templates
+│   │   └── reviews
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+├── setup_structure.sh
+├── static
+│   ├── css
+│   │   └── base.css
+│   ├── img
+│   └── js
+│       └── main.js
+├── structure.txt
+├── templates
+│   ├── base.html
+│   └── includes
+│       ├── footer.html
+│       ├── messages.html
+│       └── navbar.html
+└── venv
+    ├── bin
+    │   ├── Activate.ps1
+    │   ├── activate
+    │   ├── activate.csh
+    │   ├── activate.fish
+    │   ├── celery
+    │   ├── django-admin
+    │   ├── normalizer
+    │   ├── pip
+    │   ├── pip3
+    │   ├── pip3.11
+    │   ├── python -> python3.11
+    │   ├── python3 -> python3.11
+    │   ├── python3.11 -> /opt/homebrew/opt/python@3.11/bin/python3.11
+    │   ├── sqlformat
+    │   └── wheel
+    ├── include
+    │   └── python3.11
+    ├── lib
+    │   └── python3.11
+    └── pyvenv.cfg
+
+60 directories, 128 files
